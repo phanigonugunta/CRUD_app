@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>new user</title>
+    <link rel="stylesheet" href="/static/main/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/main/assets/css/styles.css">
+</head>
+<script src="../inputs.js"></script>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3" style="height: 63px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle fs-1">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                    </svg></span><span>User Management System</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-6"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse flex-grow-0 order-md-first" id="navcol-6">
+                <ul class="navbar-nav me-auto"></ul>
+                <div class="d-md-none my-2"><button class="btn btn-light me-2" type="button">Button</button><button class="btn btn-primary" type="button">Button</button></div>
+            </div>
+            <div class="d-none d-md-block"></div>
+        </div>
+    </nav>
+    <!-- <button class="btn btn-primary" type="button" style="margin-top: 47px;margin-left: 60px;">&lt;&lt;&nbsp; All Users</button> -->
+    <div class="d-none d-md-block" style="margin-top: 47px;margin-left: 60px;"><a class="btn btn-primary" role="button" href="main">All users</a></div>
+    <h1 class="fs-3 text-primary" style="margin-top: -29px;margin-left: 475px;border-radius: 0px;--bs-body-bg: #d52121;"><strong>New User Registration</strong></h1>
+    <h1 class="fs-4 text-black-50" style="margin-left: 363px;">Use the below form to create a new account</h1>
+    <form role="form" action="/new" method="post">
+    <h1 class="fs-4 text-success" style="margin-top: 46px;margin-left: 136px;padding: 0px;padding-right: 0px;margin-right: 0px;">Name</h1><input type="text" id="myname" name="myname" style="margin-top: -85px;margin-left: 137px;padding-right: 281px;">
+    <h1 class="fs-4 text-success" style="margin-left: 136px;margin-top: 13px;">Email</h1><input type="text" name="mymail" id="mymail" style="margin-top: 0px;margin-left: 139px;padding-right: 281px;">
+    <h1 class="fs-4 text-success" style="margin-top: 12px;margin-left: 134px;">Gender</h1>
+    <div class="form-check fs-4 text-danger" style="margin-left: 227px;"><input class="form-check-input" type="radio" name="formCheck3" value="male"><label class="form-check-label" for="formCheck3" >Male</label></div>
+    <div class="form-check fs-4 text-danger" style="margin-left: 227px;"><input class="form-check-input" type="radio" name="formCheck3" value="female"><label class="form-check-label" for="formCheck3" >Female</label></div>
+    <h1 class="fs-4 text-success" style="margin-top: 12px;margin-left: 134px;">Status</h1>
+    <div class="form-check fs-4 text-danger" style="margin-left: 227px;"><input class="form-check-input" type="radio" name="formCheck1" value="active"><label class="form-check-label" for="formCheck1" >Active</label></div>
+    <div class="form-check fs-4 text-danger" style="margin-left: 227px;"><input class="form-check-input" type="radio" name="formCheck1" value="inactive"><label class="form-check-label" for="formCheck1" >In-Active</label></div>
+    <!-- <button class="btn btn-primary fs-4" type="button" href="ne" style="margin-left: 148px;margin-right: 0px;padding-right: 125px;padding-left: 137px;padding-top: 2px;padding-bottom: 2px;margin-top: 28px;margin-bottom: 80px;">Submit Registration</button> -->
+    <!-- <div class="d-none d-md-block" style="margin-left: 148px;margin-right: 0px;padding-right: 125px;padding-left: 137px;padding-top: 2px;padding-bottom: 2px;margin-top: 28px;margin-bottom: 80px;"><a class="btn btn-primary" role="submit" type="submit">Submit Registration</a></div> -->
+    <div class="form-group mb-3"><button class="btn btn-primary d-block" style="margin-left: 148px;margin-right: 0px;padding-right: 125px;padding-left: 137px;padding-top: 2px;padding-bottom: 2px;margin-top: 28px;margin-bottom: 80px;" id="submitButton" type="submit"><i class="fas fa-save"></i>&nbsp;Register now</button></div>
+</form>
+    <script src="/static/main/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        const btn = document.querySelector('#submitButton');        
+        const radioButtons = document.querySelectorAll('input[name="formCheck-3"]');
+        btn.addEventListener("click", () => {
+            
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    let mygender = radioButton.value;
+                    console.log(mygender);
+                    break;
+                }
+            }
+            // show the output:
+            // output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size`;
+        });
+
+        const btn2 = document.querySelector('#submitButton');        
+        const radioButtons2 = document.querySelectorAll('input[name="formCheck-1"]');
+        btn2.addEventListener("click", () => {
+            let mystatus;
+            for (const radioButton of radioButtons2) {
+                if (radioButton.checked) {
+                    mystatus = radioButton.value;
+                    console.log(mystatus);
+                    break;
+                }
+            }
+            // show the output:
+            // output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size`;
+        });
+
+        // module.exports={
+        //     gen:mygender,
+        //     sts:mystatus
+        // }
+    </script>
+    
+</body>
+
+
+</html>
